@@ -3,23 +3,18 @@
         <title>Ohai</title>
     </head>
     <body>
-        <iframe 
-            src="http://player.twitch.tv/?channel=food&amp;autoplay=true&amp;playsinline=true&amp;muted=true" 
-            height="720" 
-            width="1280" 
-            frameborder="0"
-            allowfullscreen="true"
-            webkitallowfullscreen="true"
-            scrolling="no">
-        </iframe>
-        <iframe 
-            src="http://player.twitch.tv/?channel=food&amp;autoplay=true&amp;playsinline=true" 
-            height="720" 
-            width="1280" 
-            frameborder="0"
-            allowfullscreen="true"
-            webkitallowfullscreen="true"
-            scrolling="no">
-        </iframe>
+        <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+        <div id="player"></div>
+        <script type="text/javascript">
+          var options = {
+            width: 400,
+            height: 300,
+            channel: "monstercat",
+            autoplay: false
+          };
+          window.player = new Twitch.Player("player", options);
+          player.setVolume(0.5);
+        </script>
+        <button onClick="player.play()">Play!</button>
     </body>
 </html>
